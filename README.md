@@ -139,4 +139,4 @@ python src/RAG_evaluation.py
 ## Author
 
 Marta Benítez Aguilar — Aerospace Engineer & AI/Cloud enthusiast  
-[LinkedIn](https://www.linkedin.com/in/marta-benitez-aguilar) · [GitHub](https://github.com/marta-btez)
+[LinkedIn](https://www.linkedin.com/in/martabenitezaguilar) · [GitHub](https://github.com/marta-btez)
