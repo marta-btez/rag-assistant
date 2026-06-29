@@ -1,0 +1,42 @@
+[
+  {
+    "question": "What is a Transformer and what are its main advantages over recurrent neural networks?",
+    "gold_standard": "The Transformer is a sequence-to-sequence architecture based entirely on attention mechanisms, replacing RNNs. Main advantages: fully parallelizable (all tokens processed simultaneously), captures long-range dependencies directly, and scales efficiently with more parameters and data."
+  },
+  {
+    "question": "What is the self-attention mechanism and how does it work?",
+    "gold_standard": "Self-attention allows each token to directly attend to all other tokens simultaneously. It computes Query, Key and Value vectors for each token — the dot product of Query and Key determines how much attention each token pays to every other, and the result weights the Value vectors to produce the output."
+  },
+  {
+    "question": "What is Masked Language Modeling and how is it used to train BERT?",
+    "gold_standard": "MLM randomly masks 15% of input tokens and trains the model to predict the original token using surrounding context. This forces the model to learn deep bidirectional representations rather than left-to-right predictions."
+  },
+  {
+    "question": "Why does bidirectional context improve language understanding compared to unidirectional models?",
+    "gold_standard": "Meaning depends on context from both sides of a word. Unidirectional models only use left context, missing right-side information. BERT reads the full sequence in both directions simultaneously, producing richer representations for downstream tasks."
+  },
+  {
+    "question": "What is few-shot learning and how does GPT-3 use it?",
+    "gold_standard": "Few-shot learning means providing a small number of input-output examples in the prompt. GPT-3 reads these as context and generalizes to new inputs without any weight updates — called in-context learning. No gradient steps are taken, no fine-tuning required."
+  },
+  {
+    "question": "What is the difference between zero-shot, one-shot and few-shot prompting?",
+    "gold_standard": "Zero-shot provides no examples — only a task description. One-shot provides exactly one example. Few-shot provides multiple examples (typically 10-100). GPT-3 showed performance scales with the number of examples, with few-shot approaching fine-tuned model performance on many benchmarks."
+  },
+  {
+    "question": "What is the difference between parametric and non-parametric knowledge in RAG?",
+    "gold_standard": "Parametric knowledge is encoded in model weights during training and is fixed. Non-parametric knowledge is stored in an external retrieval corpus consulted at inference time. RAG combines both: the retriever fetches relevant documents non-parametrically, the generator uses them alongside parametric knowledge to produce answers."
+  },
+  {
+    "question": "What problem does RAG solve that standard language models cannot?",
+    "gold_standard": "Standard LLMs have knowledge frozen at training time and cannot access new or specific information. RAG solves this by retrieving relevant documents at query time, grounding answers in external knowledge and reducing hallucination."
+  },
+  {
+    "question": "How does LoRA reduce the computational cost of fine-tuning large language models?",
+    "gold_standard": "LoRA freezes the original pretrained weights and injects pairs of trainable low-rank matrices into each layer. Only these small matrices are updated during training, reducing trainable parameters by up to 10,000x compared to full fine-tuning while maintaining comparable performance."
+  },
+  {
+    "question": "What is the difference between LoRA and full fine-tuning?",
+    "gold_standard": "Full fine-tuning updates all model parameters, which is computationally expensive and requires storing a full model copy per task. LoRA only trains small adapter matrices added in parallel to frozen weights — the base model is never modified, adapters can be swapped per task, and training cost is a fraction of full fine-tuning."
+  }
+]
